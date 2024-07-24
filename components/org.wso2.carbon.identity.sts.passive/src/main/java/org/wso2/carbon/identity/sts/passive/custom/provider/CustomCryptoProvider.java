@@ -55,7 +55,7 @@ public class CustomCryptoProvider extends Merlin {
     }
 
     /**
-     * Loads the keystore from an InputStream or from the KeyStoreManager if it is a tenant.
+     * Loads the keystore from IdentityKeyStoreResolver.
      *
      * @param input     InputStream which the key store should be read from.
      * @param storepass Password of the key store.
