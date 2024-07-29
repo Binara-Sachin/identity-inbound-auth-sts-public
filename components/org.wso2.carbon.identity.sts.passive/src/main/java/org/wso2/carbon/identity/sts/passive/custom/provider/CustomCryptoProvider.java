@@ -25,6 +25,11 @@ import org.wso2.carbon.identity.core.IdentityKeyStoreResolver;
 import org.wso2.carbon.identity.core.util.IdentityKeyStoreResolverConstants;
 import org.wso2.carbon.identity.core.util.IdentityKeyStoreResolverException;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.security.KeyStore;
+import java.util.Properties;
+
 public class CustomCryptoProvider extends Merlin {
 
     private static final Log log = LogFactory.getLog(CustomCryptoProvider.class);
