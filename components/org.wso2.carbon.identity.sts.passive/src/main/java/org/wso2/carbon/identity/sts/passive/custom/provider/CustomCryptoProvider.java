@@ -72,10 +72,7 @@ public class CustomCryptoProvider extends Merlin {
     protected KeyStore load(InputStream input, String storepass, String provider, String type)
             throws WSSecurityException {
 
-        if (log.isDebugEnabled()) {
-            log.debug("Loading keystore...");
-        }
-
+        log.debug("Loading keystore...");
         try {
             String tenantDomain = PrivilegedCarbonContext.getThreadLocalCarbonContext().getTenantDomain();
             return IdentityKeyStoreResolver.getInstance().getKeyStore(
