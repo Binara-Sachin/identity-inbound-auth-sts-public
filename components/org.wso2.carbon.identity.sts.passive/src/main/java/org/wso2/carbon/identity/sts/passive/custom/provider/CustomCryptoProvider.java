@@ -78,6 +78,9 @@ public class CustomCryptoProvider extends Merlin {
             return IdentityKeyStoreResolver.getInstance().getKeyStore(
                     tenantDomain, IdentityKeyStoreResolverConstants.InboundProtocol.WS_FEDERATION);
         } catch (IdentityKeyStoreResolverException e) {
+            if (log.isDebugEnabled()) {
+                log.debug("Error occurred when loading keystore.", e);
+            }
             throw new WSSecurityException(WSSecurityException.ErrorCode.FAILURE, e);
         }
     }

@@ -265,13 +265,10 @@ public class RequestProcessorUtil {
 
         String[] aliasAndPassword = new String[2];
 
-        // Key Alias
         aliasAndPassword[0] = IdentityKeyStoreResolver.getInstance().getKeyStoreConfig(
                 tenantDomain,
                 IdentityKeyStoreResolverConstants.InboundProtocol.WS_FEDERATION,
                 RegistryResources.SecurityManagement.CustomKeyStore.PROP_KEY_ALIAS);
-
-        // KeyStore Password
         aliasAndPassword[1] = IdentityKeyStoreResolver.getInstance().getKeyStoreConfig(
                 tenantDomain,
                 IdentityKeyStoreResolverConstants.InboundProtocol.WS_FEDERATION,
