@@ -75,12 +75,12 @@ public class CustomCryptoProvider extends Merlin {
         log.debug("Loading keystore...");
         try {
             String tenantDomain = PrivilegedCarbonContext.getThreadLocalCarbonContext().getTenantDomain();
-            return IdentityKeyStoreResolver.getInstance().getKeyStore(
+            KeyStore keyStore = IdentityKeyStoreResolver.getInstance().getKeyStore(
                     tenantDomain, IdentityKeyStoreResolverConstants.InboundProtocol.WS_FEDERATION);
+            log.debug("Successfully retrieved the keystore.");
+            return keyStore;
         } catch (IdentityKeyStoreResolverException e) {
-            if (log.isDebugEnabled()) {
-                log.debug("Error occurred when loading keystore.", e);
-            }
+            log.debug("Error occurred when loading keystore.", e);
             throw new WSSecurityException(WSSecurityException.ErrorCode.FAILURE, e);
         }
     }
